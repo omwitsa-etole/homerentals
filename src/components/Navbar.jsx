@@ -7,14 +7,14 @@ import "../styles/Navbar.scss";
 import { Link, useNavigate } from "react-router-dom";
 import { setLogout } from "../redux/state";
 import properties from "../properties.json"
-
+import Session from "../Session.js"
 const Url = properties.url
 
 const Navbar = () => {
   const [dropdownMenu, setDropdownMenu] = useState(false);
 
   const user = useSelector((state) => state.user);
-
+  const session = new Session()
   const dispatch = useDispatch();
 
   const [search, setSearch] = useState("")
@@ -90,6 +90,7 @@ const Navbar = () => {
             <Link
               to="/login"
               onClick={() => {
+				  session.delete()
                 dispatch(setLogout());
               }}
             >
