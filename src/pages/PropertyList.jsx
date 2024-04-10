@@ -20,7 +20,7 @@ const PropertyList = () => {
   const dispatch = useDispatch()
   const getPropertyList = async () => {
     try {
-	  fetchFunction(`${Url}/users/${user._id}/properties`,function(data){
+	  fetchFunction(`${Url}/users/${user._id}/properties`,"get",null,function(data){
 		  console.log(data)
 		  dispatch(setPropertyList(data))
           setLoading(false)

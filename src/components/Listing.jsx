@@ -20,9 +20,8 @@ const Listings = () => {
 
   const getFeedListings = async () => {
     try {
-		fetchFunction(selectedCategory !== "All"
-          ? `${Url}/properties?category=${selectedCategory}`
-          : `${Url}/properties`,function(data){
+		let url = selectedCategory !== "All" ? `${Url}/properties?category=${selectedCategory}`: `${Url}/properties`
+		fetchFunction(url,"get",null,function(data){
 		  console.log(data)
 		  dispatch(setListings({ listings: data }));
 		  setLoading(false);
