@@ -1,6 +1,8 @@
 async function fetchFunction(apiUrl,method,payload,nextFunction,token) {
     try {
-     
+      if(method && method.toLowerCase().includes("options")){
+		  method = "GET"
+	  }
       const options = {
         method: method || 'GET', // Default to GET if method is not provided
         headers: {
