@@ -23,7 +23,7 @@ const LoginPage = () => {
     try {
 		
 	  fetchFunction(`${Url}/auth/login`,"post",{ email, password },function(loggedIn){
-		  console.log(data)
+		  console.log(loggedIn)
 		  if (loggedIn) {
 			dispatch (
 			  setLogin({
