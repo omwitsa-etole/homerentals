@@ -134,6 +134,7 @@ const CreateListing = () => {
 	  var payload = formDataToJson(listingForm)
 	  fetchFunction(`${Url}/properties/create`,"post",payload,function(data){
 		  console.log(data)
+		  
 		  if(data){
 			navigate("/")  
 		  } 

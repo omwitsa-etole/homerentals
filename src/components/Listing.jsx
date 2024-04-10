@@ -23,7 +23,7 @@ const Listings = () => {
 		fetchFunction(selectedCategory !== "All"
           ? `${Url}/properties?category=${selectedCategory}`
           : `${Url}/properties`,function(data){
-		  console.log(data.message)
+		  console.log(data)
 		  dispatch(setListings({ listings: data }));
 		  setLoading(false);
 	  })

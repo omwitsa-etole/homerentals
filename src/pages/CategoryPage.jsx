@@ -22,7 +22,7 @@ const CategoryPage = () => {
   const getFeedListings = async () => {
     try {
 		fetchFunction(`${Url}/properties?category=${category}`,function(data){
-			console.log(data.message)
+			console.log(data)
 			dispatch(setListings({ listings: data }));
 			setLoading(false);
 	    })
