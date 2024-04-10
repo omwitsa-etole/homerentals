@@ -126,7 +126,7 @@ const ListingDetails = () => {
             src={`${Url}/assets/images/avatar.jpg`}
           />
           <h3>
-            Hosted by {listing.creator.firstName ? listing.creator.firstName : ""} {listing.creator.lastName ? listing.creator.lastName :""}
+            Hosted by {listing.creator ? listing.creator.firstName : ""} {listing.creator ? listing.creator.lastName :""}
           </h3>
         </div>
         <hr />
