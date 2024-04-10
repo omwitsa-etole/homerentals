@@ -20,7 +20,7 @@ const ReservationList = () => {
 
   const getReservationList = async () => {
     try {
-	  fetchFunction(`${Url}/${userId}/reservations`,function(data){
+	  fetchFunction(`${Url}/${userId}/reservations`,"get",null,function(data){
 			console.log(data)
 			dispatch(setReservationList(data));
 			setLoading(false);

@@ -22,7 +22,7 @@ const ListingDetails = () => {
 
   const getListingDetails = async () => {
     try {
-	  fetchFunction(`${Url}/properties/${listingId}`,function(data){
+	  fetchFunction(`${Url}/properties/${listingId}`,"get",null,function(data){
 		  console.log(data)
 		  setListing(data);
           setLoading(false);

@@ -21,7 +21,7 @@ const SearchPage = () => {
 
   const getSearchListings = async () => {
     try {
-	  fetchFunction(`${Url}/properties/search/${search}`,function(data){
+	  fetchFunction(`${Url}/properties/search/${search}`,"get",null,function(data){
 		  console.log(data)
 		  dispatch(setListings({ listings: data }))
 		  setLoading(false)

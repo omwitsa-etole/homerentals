@@ -20,7 +20,7 @@ const TripList = () => {
 
   const getTripList = async () => {
     try {
-      fetchFunction(`${Url}/users/${userId}/trips`,function(data){
+      fetchFunction(`${Url}/users/${userId}/trips`,"get",null,function(data){
 		  console.log(data)
 		  dispatch(setTripList(data));
 		  setLoading(false);
