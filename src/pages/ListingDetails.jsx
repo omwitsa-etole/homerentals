@@ -123,16 +123,10 @@ const ListingDetails = () => {
 
         <div className="profile">
           <img
-            src={`${Url}/${listing.creator.profileImagePath.replace(
-              "public",
-              ""
-            )?listing.creator.profileImagePath.replace(
-              "public",
-              ""
-            ):"assets/images/avatar.jpg"}`}
+            src={`${Url}/assets/images/avatar.jpg`}
           />
           <h3>
-            Hosted by {listing.creator.firstName} {listing.creator.lastName}
+            Hosted by {listing.creator.firstName ? listing.creator.firstName : ""} {listing.creator.lastName ? listing.creator.lastName :""}
           </h3>
         </div>
         <hr />
