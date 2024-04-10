@@ -4,7 +4,7 @@ async function fetchFunction(apiUrl,method,payload,nextFunction,token) {
       const options = {
         method: method || 'GET', // Default to GET if method is not provided
         headers: {
-          'Content-Type': header || 'application/json', // Set content type to JSON
+          'Content-Type': 'application/json', // Set content type to JSON
           "x-auth-token": token || "None",
         }
       };

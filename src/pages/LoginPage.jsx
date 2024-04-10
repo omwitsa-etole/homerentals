@@ -21,21 +21,19 @@ const LoginPage = () => {
     e.preventDefault()
 
     try {
-		var payload = formDataToJson(register_form)
-		  console.log(payload)
-		  
-		  fetchFunction(`${Url}/auth/login`,"post",{ email, password },function(loggedIn){
-			  console.log(data.message)
-			  if (loggedIn) {
-				dispatch (
-				  setLogin({
-					user: loggedIn.user,
-					token: loggedIn.token
-				  })
-				)
-				navigate("/")
-			  } 
-		  })
+		
+	  fetchFunction(`${Url}/auth/login`,"post",{ email, password },function(loggedIn){
+		  console.log(data)
+		  if (loggedIn) {
+			dispatch (
+			  setLogin({
+				user: loggedIn.user,
+				token: loggedIn.token
+			  })
+			)
+			navigate("/")
+		  } 
+	  })
 
     } catch (err) {
       console.log("Login failed", err.message)
