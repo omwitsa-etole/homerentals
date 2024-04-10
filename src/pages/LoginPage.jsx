@@ -6,13 +6,13 @@ import { useNavigate } from "react-router-dom"
 import properties from "../properties.json"
 import formDataToJson from "../toJson.js"
 import fetchFunction from "../fetch.js"
-
+import Session from "../Session.js"
 const Url = properties.url
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const session = new Session()
   const dispatch = useDispatch()
 
   const navigate = useNavigate()
@@ -25,6 +25,8 @@ const LoginPage = () => {
 	  fetchFunction(`${Url}/auth/login`,"post",{ email, password },function(loggedIn){
 		  console.log(loggedIn)
 		  if (loggedIn) {
+			  session.set("user="+loggedIn.user._id)
+			  session.set("token="+loggedIn.token)
 			dispatch (
 			  setLogin({
 				user: loggedIn.user,

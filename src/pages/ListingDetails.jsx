@@ -11,6 +11,7 @@ import { useSelector } from "react-redux";
 import Footer from "../components/Footer";
 import properties from "../properties.json"
 import fetchFunction from "../fetch.js"
+import Session from "../Session.js"
 
 const Url = properties.url
 
@@ -19,7 +20,7 @@ const ListingDetails = () => {
 
   const { listingId } = useParams();
   const [listing, setListing] = useState(null);
-
+  const session = new Session()
   const getListingDetails = async () => {
     try {
 	  fetchFunction(`${Url}/properties/${listingId}`,"get",null,function(data){
@@ -59,9 +60,13 @@ const ListingDetails = () => {
   const dayCount = Math.round(end - start) / (1000 * 60 * 60 * 24); // Calculate the difference in day unit
 
   /* SUBMIT BOOKING */
-  const customerId = useSelector((state) => state?.user?._id)
+  var customerId = useSelector((state) => state?.user?._id)
 
   const navigate = useNavigate()
+  
+  if(!customerId){
+	customerId = session.get("user") ? session.get("user") : null   
+  }
 
   const handleSubmit = async () => {
     try {

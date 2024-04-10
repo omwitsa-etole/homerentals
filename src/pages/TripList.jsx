@@ -8,16 +8,19 @@ import ListingCard from "../components/ListingCard";
 import Footer from "../components/Footer"
 import properties from "../properties.json"
 import fetchFunction from "../fetch.js"
+import Session from "../Session.js"
 
 const Url = properties.url
 
 const TripList = () => {
   const [loading, setLoading] = useState(true);
-  const userId = useSelector((state) => state.user._id);
+  var userId = useSelector((state) => state.user._id);
   const tripList = useSelector((state) => state.user.tripList);
-
+  const session = new Session()
   const dispatch = useDispatch();
-
+  if(!userId || userId === undefined){
+	  userId = session.get("user")
+  }
   const getTripList = async () => {
     try {
       fetchFunction(`${Url}/users/${userId}/trips`,"get",null,function(data){
