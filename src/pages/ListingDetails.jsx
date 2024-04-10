@@ -126,7 +126,10 @@ const ListingDetails = () => {
             src={`${Url}/${listing.creator.profileImagePath.replace(
               "public",
               ""
-            )}`}
+            )?listing.creator.profileImagePath.replace(
+              "public",
+              ""
+            ):"assets/images/avatar.jpg"}`}
           />
           <h3>
             Hosted by {listing.creator.firstName} {listing.creator.lastName}
