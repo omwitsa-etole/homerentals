@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <a href="/">
-        <img src="/assets/logo.png" alt="logo" />
+        <img src={`${process.env.PUBLIC_URL}/assets/logo.png`} alt="logo" />
       </a>
 
       <div className="navbar_search">
