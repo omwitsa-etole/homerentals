@@ -104,7 +104,7 @@ const CreateListing = () => {
 
   const handlePost = async (e) => {
     e.preventDefault();
-
+    console.log(photos)
     try {
       /* Create a new FormData onject to handle file uploads */
       const listingForm = new FormData();
@@ -132,6 +132,8 @@ const CreateListing = () => {
         listingForm.append("listingPhotos", photo);
       });
 	  var payload = formDataToJson(listingForm)
+    console.log(payload)
+    return;
 	  fetchFunction(`${Url}/properties/create`,"post",payload,function(data){
 		  console.log(data)
 		  
