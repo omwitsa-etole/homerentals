@@ -139,7 +139,7 @@ const CreateListing = () => {
 		  if(data.message !== undefined){
         alert(data.message)
       }
-		  if(data){
+		  if(data.listing){
 			navigate("/")  
 		  } 
 	  })
