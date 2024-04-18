@@ -23,8 +23,8 @@ const LoginPage = () => {
     try {
 		
 	  fetchFunction(`${Url}/auth/login`,"post",{ email, password },function(loggedIn){
-		  console.log(loggedIn)
-		  if (loggedIn) {
+		  if(loggedIn.message){alert(loggedIn.message)}
+		  if (loggedIn.token) {
 			  session.set("user="+loggedIn.user._id)
 			  session.set("token="+loggedIn.token)
 			dispatch (

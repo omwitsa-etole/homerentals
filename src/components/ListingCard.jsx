@@ -60,7 +60,7 @@ const ListingCard = ({
     
   } else { return }
   };
-
+  console.log("imgs",listingPhotoPaths)
   return (
     <div
       className="listing-card"
