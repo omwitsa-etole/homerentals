@@ -14,7 +14,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              additionalData: `@import './properties.json';`,
+              properties: `@import './properties.json';`,
             },
           },
 		  {
