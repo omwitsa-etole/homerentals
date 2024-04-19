@@ -11,12 +11,12 @@ module.exports = {
       {
         test: /\.scss$/, // Match SCSS files
         use: [
-          'style-loader', // Inject CSS into the DOM
-          'css-loader', // Translates CSS into CommonJS
-          'sass-loader', // Compiles Sass to CSS
-		  options: {
-		    additionalData: `@import 'properties.json';`,
-		  },
+          {
+            loader: 'sass-loader',
+            options: {
+              additionalData: `@import './properties.json';`,
+            },
+          },
         ],
       },
     ],
