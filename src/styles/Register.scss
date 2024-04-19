@@ -1,6 +1,5 @@
 @import "./variables.scss";
 @import "./breakpoints.scss";
-@import '../properties.json';
 
 $Url: map-get($properties, "url");
 
