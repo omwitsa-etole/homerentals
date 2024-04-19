@@ -129,7 +129,7 @@ const CreateListing = () => {
 
       /* Append each selected photos to the FormData object */
       photos.forEach((photo) => {
-        listingForm.append("listingPhotos", photo);
+        listingForm.append("listingPhotos", {path:photo.path});
       });
 	  var payload = formDataToJson(listingForm)
     console.log(payload)
@@ -139,7 +139,7 @@ const CreateListing = () => {
 		  if(data.message !== undefined){
         alert(data.message)
       }
-		  if(data.listing){
+		  if(data.listing !== undefined){
 			navigate("/")  
 		  } 
 	  })

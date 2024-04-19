@@ -1,6 +1,9 @@
 import { categories } from "../data";
 import "../styles/Categories.scss"
 import { Link } from "react-router-dom";
+import properties from "../properties.json"
+
+const Url = properties.url
 
 const Categories = () => {
   return (
@@ -16,7 +19,7 @@ const Categories = () => {
         {categories?.slice(1, 7).map((category, index) => (
           <Link key={index+23} to={`/properties/category/${category.label}`}>
             <div className="category" key={index}>
-              <img src={category.img} alt={category.label} />
+              <img src={`${Url}`+category.img} alt={category.label} />
               <div className="overlay"></div>
               <div className="category_text">
                 <div className="category_text_icon">{category.icon}</div>
