@@ -133,8 +133,11 @@ const CreateListing = () => {
 		listingForm.append("Photos", photo.name);
       });
 	  var payload = formDataToJson(listingForm)
-    console.log(payload)
-    
+	  
+		if(Array.isArray(payload["Photos"]) === false){
+			payload["Photos"] = payload["Photos"].split(",")
+		}
+      console.log(payload)
 	  fetchFunction(`${Url}/properties/create`,"post",payload,function(data){
 		  console.log(data)
 		  if(data.message !== undefined){
