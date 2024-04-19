@@ -1,10 +1,13 @@
 import "../styles/Footer.scss"
 import { LocationOn, LocalPhone, Email } from "@mui/icons-material"
+import properties from "../properties.json"
+
+const Url = properties.url
 const Footer = () => {
   return (
     <div className="footer">
       <div className="footer_left">
-        <a href="/"><img src="/assets/logo.png" alt="logo" /></a>
+        <a href="/"><img src={`${Url}/assets/logo.png`} alt="logo" /></a>
       </div>
 
       <div className="footer_center">
@@ -20,13 +23,13 @@ const Footer = () => {
         <h3>Contact</h3>
         <div className="footer_right_info">
           <LocalPhone />
-          <p>+1 234 567 890</p>
+          <p>+1 254 567 890</p>
         </div>
         <div className="footer_right_info">
           <Email />
-          <p>dreamnest@support.com</p>
+          <p>contact@support.com</p>
         </div>
-        <img src="/assets/payment.png" alt="payment" />
+        <img src={`${Url}/assets/payment.png`} alt="payment" />
       </div>
     </div>
   )
