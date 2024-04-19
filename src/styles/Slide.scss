@@ -1,8 +1,12 @@
+@import 'properties.json';
+
+$Url: map-get($properties, "url");
+
 .slide {
   width: 100vw;
   height: 80vh;
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("");
+    url('#{$Url}/assets/slide.jpg');
   background-position: center top;
   background-size: cover;
 
