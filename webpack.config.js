@@ -17,6 +17,12 @@ module.exports = {
               additionalData: `@import './properties.json';`,
             },
           },
+		  {
+			  loader: 'babel-loader', // Use babel-loader for transpiling JSX
+			  options: {
+				presets: ['@babel/preset-env', '@babel/preset-react'], // Specify presets for Babel
+			  },
+		  },
         ],
       },
     ],
